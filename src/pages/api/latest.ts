@@ -5,7 +5,12 @@ import { createClient } from 'redis';
 
 dotenv.config();
 
-const client = createClient();
+const client = createClient({
+  socket: {
+    host: 'redis',
+    port: 6379,
+  },
+});
 client
   .connect()
   .then(() => console.log('Connected to Redis -- /latest'))
