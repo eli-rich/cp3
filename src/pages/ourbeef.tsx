@@ -8,25 +8,28 @@ import Footer from '../components/layout/Footer';
 import fs from 'node:fs/promises';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import { marked } from 'marked';
 
 interface ServerProps {
+  json?: string;
   error: string;
   md: string;
 }
 
-export default function Home({ md, error }: ServerProps) {
+export default function OurBeef({ md, error }: ServerProps) {
   if (error && typeof window !== 'undefined') alert(error);
   const html = marked(md);
   return (
     <>
       <Title title='Cowpen Creek Farm' />
       <NavBar />
-      <Hero />
-      <ContentContainer>
-        <ContentWrapper serverHTML={html as string} />
-      </ContentContainer>
-      <Footer />
+      <div className='mt-24'>
+        <ContentContainer>
+          <ContentWrapper serverHTML={html as string} />
+        </ContentContainer>
+        <Footer />
+      </div>
     </>
   );
 }
@@ -36,7 +39,7 @@ export async function getStaticProps() {
   let md = '';
   let error = '';
   try {
-    md = await fs.readFile(resolve(join(__dirname, '../../public/md/home.md')), 'utf8');
+    md = await fs.readFile(resolve(join(__dirname, '../../public/md/ourbeef.md')), 'utf8');
   } catch (e) {
     error = (e as Error).message;
   }

@@ -13,6 +13,13 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    command: '--port 6379 --requirepass ::REMRichE1007'
+    ports:
+      - '6379:6379'
   certbot:
     container_name: certbot
     image: certbot/certbot
