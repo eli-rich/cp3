@@ -19,7 +19,7 @@ services:
     restart: always
     command: '--port 6379 --requirepass ::REMRichE1007'
     ports:
-      - '6379:6379'
+      - '0.0.0.0:6379:6379'
   certbot:
     container_name: certbot
     image: certbot/certbot
