@@ -47,3 +47,12 @@ ul {
   list-style-type: circle;
   text-color: black;
 }
+
+.ff-fix {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+}

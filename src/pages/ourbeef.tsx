@@ -10,6 +10,7 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { marked } from 'marked';
+import { useEffect } from 'react';
 
 interface ServerProps {
   json?: string;
@@ -20,6 +21,17 @@ interface ServerProps {
 export default function OurBeef({ md, error }: ServerProps) {
   if (error && typeof window !== 'undefined') alert(error);
   const html = marked(md);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let elements = Array.from(document.querySelectorAll('p > img'));
+      elements = elements.map((element) => element.parentElement) as HTMLElement[];
+      elements.forEach((element) => {
+        element.classList.add('ff-fix');
+      });
+    }
+  }, []);
+
   return (
     <>
       <Title title='Cowpen Creek Farm' />
