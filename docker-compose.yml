@@ -27,6 +27,8 @@ services:
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
     networks:
       - redis
+    depends_on:
+      - nextjs
   redis:
     container_name: redis
     image: redis
