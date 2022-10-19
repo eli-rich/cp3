@@ -7,8 +7,8 @@ We are a 3rd generation family farm. Located in Robertsdale, Alabama. Serving th
 
 The steers we harvest are antibiotic and hormone-free. They are raised right here on our farm from birth to harvest. All of our cows are humanely handled and have access to green grass, hay, and minerals.
 
-![alt](/img/test_mobile.webp) ![alt](/img/dogs.webp)
-![alt](/img/cows_3.webp) ![alt](/img/trixie.webp)
+![Baby Calf](/img/test_mobile.webp) ![Two dogs in pasture](/img/dogs.webp)
+![3 cows in pasture](/img/cows_3.webp) ![Cow on farm](/img/trixie.webp)
 
 ## We **_LOVE_** our animals.
 
@@ -22,11 +22,3 @@ Text or Call: [251-597-6636](tel:12515976636)
 ` `
 
 **We do not ship at this time.**
-
-
-
-
-
-
-
-

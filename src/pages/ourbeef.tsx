@@ -1,16 +1,12 @@
 import Title from '../components/utils/Title';
 import NavBar from '../components/layout/NavBar';
-import Hero from '../components/layout/Hero';
 import ContentContainer from '../components/content/ContentContainer';
 import ContentWrapper from '../components/content/ContentWrapper';
 import Footer from '../components/layout/Footer';
 
-import fs from 'node:fs/promises';
-import { join, dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 import { marked } from 'marked';
 import { useEffect } from 'react';
+import { createClient } from 'redis';
 
 interface ServerProps {
   json?: string;
@@ -47,11 +43,22 @@ export default function OurBeef({ md, error }: ServerProps) {
 }
 
 export async function getStaticProps() {
-  const __dirname = dirname(fileURLToPath(import.meta.url));
+  const client = createClient({
+    socket: {
+      host: 'redis',
+      port: 6379,
+    },
+  });
+
   let md = '';
   let error = '';
   try {
-    md = await fs.readFile(resolve(join(__dirname, '../../public/md/ourbeef.md')), 'utf8');
+    await client.connect().then(() => console.log('Connected to Redis -- /'));
+    await client
+      .sendCommand(['AUTH', process.env.REDIS_PASSWORD as string])
+      .then(() => console.log('Authenticated to Redis -- /'));
+    const data = await client.LRANGE('home', 0, 0);
+    md = data[0];
   } catch (e) {
     error = (e as Error).message;
   }

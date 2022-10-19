@@ -4,10 +4,7 @@ import fs from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import dotenv from 'dotenv';
 import { createClient } from 'redis';
-
-dotenv.config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

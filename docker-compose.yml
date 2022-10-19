@@ -2,15 +2,19 @@ version: '3'
 services:
   nextjs:
     container_name: nextjs
-    build: ./
     depends_on:
-      - redis
+      redis:
+        condition: service_started
+    build: ./
     environment:
       RADDR: redis
-    ports:
-      - 3000:3000
+    # ports:
+    #   - 3000:3000
     networks:
       - redis
+    links:
+      - redis
+    command: "/bin/sh -c 'yarn build && pm2-runtime yarn -- start'"
   nginx:
     container_name: nginx
     build: ./nginx
@@ -23,14 +27,11 @@ services:
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
     networks:
       - redis
-
   redis:
     container_name: redis
     image: redis
     restart: always
     command: 'redis-server --port 6379 --requirepass ::REMRichE1007'
-    ports:
-      - '6379:6379'
     networks:
       - redis
   certbot:
