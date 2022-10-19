@@ -8,8 +8,8 @@ services:
     build: ./
     environment:
       RADDR: redis
-    # ports:
-    #   - 3000:3000
+    ports:
+      - 3000:3000
     networks:
       - redis
     links:
