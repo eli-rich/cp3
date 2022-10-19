@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     <>
-      <Html>
+      <Html lang='en'>
         <Head>
           <meta charSet='UTF-8' />
           <link rel='apple-touch-icon' sizes='180x180' href='/favicons/apple-touch-icon.png' />

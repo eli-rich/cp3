@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <a className='text-md w-1/3 text-center text-gray-400'>Editor</a>
       </Link>
       <p className='text-white mb-2'>Copyright © Eli Richardson {new Date().getFullYear()}</p>
-      <img src='/img/logo.webp' style={{ width: '236px', height: '155px' }} />
+      <Image alt='logo' src='/img/logo.webp' width='236px' height='155px' />
     </footer>
   );
 }
