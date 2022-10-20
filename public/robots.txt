@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Disallow: /editor
+Sitemap: https://cowpencreek.com/sitemap.xml
