@@ -13,6 +13,7 @@ RUN npm install --global yarn --force
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
 COPY ./package.json ./
+COPY ./yarn.lock ./
 
 # Install dependencies
 RUN yarn install
