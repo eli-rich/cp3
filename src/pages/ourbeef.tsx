@@ -57,7 +57,7 @@ export async function getStaticProps() {
     await client
       .sendCommand(['AUTH', process.env.REDIS_PASSWORD as string])
       .then(() => console.log('Authenticated to Redis -- /'));
-    const data = await client.LRANGE('home', 0, 0);
+    const data = await client.LRANGE('ourbeef', 0, 0);
     md = data[0];
   } catch (e) {
     error = (e as Error).message;
