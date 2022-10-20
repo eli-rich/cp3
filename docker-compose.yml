@@ -29,6 +29,8 @@ services:
       - redis
     depends_on:
       - nextjs
+    links:
+      - nextjs
   redis:
     container_name: redis
     image: redis
