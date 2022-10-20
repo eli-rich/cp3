@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createHash } from 'node:crypto';
+import bcrypt from 'bcrypt';
 import { createClient } from 'redis';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -32,11 +32,12 @@ type Response = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Response>) {
   if (req.method !== 'POST') return res.status(405).json({ success: false, error: 'Method not allowed' });
   const { password, content, page } = req.body;
-  let isVerified = false;
-  let hash = createHash('md5').update(password).digest('hex');
-  isVerified = hash === process.env.SHASUM;
-  if (!isVerified) return res.status(401).json({ success: false, error: 'Incorrect password' });
+
   try {
+    const hash = await client.GET('pass');
+    if (!hash) return res.status(500).json({ success: false, error: 'Database Error' });
+    const isVerified = await bcrypt.compare(password, hash);
+    if (!isVerified) return res.status(401).json({ success: false, error: 'Incorrect password' });
     await client.LPUSH(page, content);
     await fs.writeFile(join(__dirname, `../../../public/md/${page}.md`), content);
   } catch (e) {
