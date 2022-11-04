@@ -89,9 +89,9 @@ export default function EditorSubmit({ open, toggleOpen, page, content }: Submit
       </button>
     </>
   );
-  const lockIMG = () => <Image src={lockSVG} width='40' height='40' layout='intrinsic' alt='' />;
-  const successIMG = () => <Image src={successSVG} width='40' height='40' layout='intrinsic' alt='' />;
-  const errorIMG = () => <Image src={errorSVG} width='40' height='40' layout='intrinsic' alt='' />;
+  const lockIMG = () => <Image src={lockSVG} width='40' height='40' alt='' />;
+  const successIMG = () => <Image src={successSVG} width='40' height='40' alt='' />;
+  const errorIMG = () => <Image src={errorSVG} width='40' height='40' alt='' />;
 
   return (
     <>

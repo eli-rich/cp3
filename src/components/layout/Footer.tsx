@@ -8,7 +8,7 @@ export default function Footer() {
         Editor
       </Link>
       <p className='text-white mb-2'>Copyright © Eli Richardson {new Date().getFullYear()}</p>
-      <Image alt='logo' src='/img/logo.webp' width='236px' height='155px' />
+      <Image alt='logo' src='/img/logo.webp' width='236' height='155' />
     </footer>
   );
 }

@@ -7,77 +7,77 @@ Don't go empty handed to the party; take our Wagyu Sampler gift box! Wagyu beef 
 
 ` `
 
-![](/img/grill_img.webp)
+![Steak on grill.](/img/grill_img.webp)
 
 ` `
 
-![](/img/gift2.webp) ![](/img/marble.webp)
+![Gift box](/img/gift2.webp) ![Marbled wagyu beef.](/img/marble.webp)
 
 ` `
 
 # Beef Boxes — 2022/2023
-  - Sampler (7-10 lbs) $95
+  - Sampler (7-9lbs) $95
     - 1 New York Strip Steak
     - 1 Roast
-    - 2 ~1lbs pkg of Ground Beef
+    - 2 pkg of Ground Beef
     - 1 Filet Mignon
     - 1 pkg Kabobs/Stew
-  - Farmer Girl (12-14 lbs) $145
+  - Farmer Girl (12-13lbs) $145
     - 2 Filet Mignon
-    - 6 ~1lbs pkg Ground Beef
+    - 6 pkg Ground Beef
     - 1 Sirloin Steak
     - 1 Roast
-    - 1 pkg Kabobs
-  - Rancher (16-18 lbs) $125
+    - 1 pkg Kabobs/Stew
+  - Rancher (16-17 lbs) $125
     - 1 (3-5 lbs) Brisket
     - 1 Roast
     - 1 pkg Kabobs/Stew
-    - 4 ~1lbs pkg Ground Beef
+    - 4 pkg Ground Beef
     - 1 Tenderized Steak (2)
-  - Cowpoke (14-16 lbs) $155
-    - 6 ~1lb pkg Ground Beef
+  - Cowpoke (14-15 lbs) $155
+    - 6 pkg Ground Beef
     - 2 New York Strip Steaks
     - 1 Roast
     - 2 Filet Mignon
     - 2 pkg Fajita Strips
-  - Cowboy (22-26 lbs) $245
+  - Cowboy (22-25 lbs) $245
     - 2 Ribeye Steaks
     - 2 New York Strip Steaks
-    - 10 ~1lb pkg Ground Beef
+    - 10 pkg Ground Beef
     - 2 Roast
-    - 1 Fajita Strips
-  - Wild West (27-31lbs) $312
+    - 1 pkg Fajita Strips
+  - Wild West (27-30 lbs) $312
     - 2 Filet Mignon
     - 2 Ribeye Steaks
     - 2 Roast
-    - 10 ~1lb pkg Ground Beef
+    - 10 pkg Ground Beef
     - 1 pkg Kabobs/Stew
     - 2 Sirloin Steak
     - 2 New York Strip Steaks
 
 ` `
 ## Larger Quantity Boxes
-  - Chillin (38-41lbs) $455
+  - Chillin (38-40 lbs) $455
     - 4 Ribeye Steak
     - 4 New York Strip Steak
     - 2 pkg Kabobs/Stew
-    - 20 ~1lb pkg Ground Beef
+    - 20 pkg Ground Beef
     - 3 Roast
-  - Party Pack (37-40 lbs) $555
+  - Party Pack (37-39 lbs) $555
     - 6 Ribeye Steak
     - 4 New York Strip Steak
     - 4 Filet Mignon
     - 2 Sirloin Steak
-    - 14 ~1lb pkg Ground Beef
+    - 14 pkg Ground Beef
     - 3 Roast
     - 2 Fajita Strip
-  - Grillin Time (54-56 lbs) $745
+  - Grillin Time (54-55 lbs) $745
     - 4 Filet Mignon
     - 4 Ribeye Steak
     - 6 New York Strip Steak
     - 4 Sirloin Steak
     - 4 Roast
-    - 30 ~1lb pkg Ground Beef
+    - 30 pkg Ground Beef
     - 2 pkg Kabobs/Stew
 
 ` `
@@ -90,7 +90,7 @@ Don't go empty handed to the party; take our Wagyu Sampler gift box! Wagyu beef 
   - *(1-2 lbs) Kidneys - $10*
   - *(5 lbs) Beef Trimmings - $10*
   - *(3-5 lbs) Bone Marrow -$10*
-  - *16 ~1 lb pkg Wagyu Ground Beef - $128*
+  - *16 pkg Wagyu Ground Beef - $128*
 
 ` `
 
@@ -134,5 +134,3 @@ Text or Call: [251-597-0897](tel:12515976636)
 ` `
 
 **We do not ship at this time.**
-
-

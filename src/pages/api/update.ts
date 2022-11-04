@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const isVerified = await bcrypt.compare(password, hash);
     if (!isVerified) return res.status(401).json({ success: false, error: 'Incorrect password' });
     await client.LPUSH(page, content);
-    await fs.writeFile(join(__dirname, `../../../public/md/${page}.md`), content);
+    // await fs.writeFile(join(__dirname, `../../../public/md/${page}.md`), content);
   } catch (e) {
     console.log((e as Error).message);
     return res.status(500).json({ success: false, error: 'Internal server error' });
