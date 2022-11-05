@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const client = createClient({
   socket: {
-    host: 'localhost',
+    host: 'redis',
     port: 6379,
   },
 });
