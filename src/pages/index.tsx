@@ -32,7 +32,7 @@ export default function Home({ md, error }: ServerProps) {
 export async function getStaticProps() {
   const client = createClient({
     socket: {
-      host: 'redis',
+      host: 'localhost',
       port: 6379,
     },
   });

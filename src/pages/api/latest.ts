@@ -4,7 +4,7 @@ import { createClient } from 'redis';
 
 const client = createClient({
   socket: {
-    host: 'redis',
+    host: 'localhost',
     port: 6379,
   },
 });
