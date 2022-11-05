@@ -13,6 +13,15 @@ module.exports = {
       backgroundImage: {
         'main-hero-bg': 'url("/img/head-prod2.webp")',
       },
+      keyframes: {
+        'button-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+      },
+      animation: {
+        'button-pulse': 'button-pulse 1200ms cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
   daisyui: {
