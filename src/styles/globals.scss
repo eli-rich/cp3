@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@layer components {
+  p:has(img) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  p > img {
+    flex-grow: 1;
+    min-width: calc(100% / 8);
+    object-fit: contain;
+    justify-content: center;
+  }
+  li {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  @media only screen and (max-device-width: 480px) {
+    p:has(img) {
+      justify-content: center !important;
+    }
+    p > img {
+      min-width: 40% !important;
+      object-fit: cover !important;
+      height: 11rem !important;
+    }
+    #root > div > div > article > p:nth-child(6) > img {
+      width: auto !important;
+    }
+  }
+  #editorContainer {
+    height: calc(100vh - 9.25rem);
+  }
+  textarea {
+    font-size: 21px !important;
+    line-height: 24px !important;
+  }
+}
+
+img {
+  border-radius: 5px !important;
+}
+
+ul {
+  list-style-type: circle;
+  color: black;
+}
+
+.ff-fix {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+  img {
+    max-height: 20rem;
+  }
+}
+
+.beef-breakdown {
+  max-height: 30rem !important;
+  height: 30rem !important;
+  width: auto !important;
+  min-width: 100% !important;
+  background-color: white;
+}
+
+.bb-container {
+  border: 0px;
+  background-color: white;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
