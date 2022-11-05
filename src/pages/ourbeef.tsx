@@ -25,6 +25,9 @@ export default function OurBeef({ md, error }: ServerProps) {
       elements.forEach((element) => {
         element.classList.add('ff-fix');
       });
+      elements[3].classList.add('bb-container');
+      const bbreakdownGraphic = elements[3].querySelector('img');
+      bbreakdownGraphic!.classList.add('beef-breakdown');
     }
   }, []);
 
