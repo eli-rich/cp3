@@ -46,36 +46,31 @@ export default function Editor() {
       <EditorSubmit open={open} toggleOpen={toggleOpen} page={page} content={value} />
       <NavBar />
       <div className='translate-y-20' id='editorContainer'>
-        <div className='flex w-100'>
-          <div className='flex w-3/5 -translate-y-1'>
-            <h1 className='text-xl justify-self-start mr-5'>Preset: </h1>
-            <div className='flex flex-col'>
-              <button
-                onClick={() => {
-                  setValue(hmd);
-                }}
-                className='btn btn-primary btn-sm text-white w-24 ml-1'
-              >
-                Home
-              </button>
-              <button onClick={saveHome} className='btn btn-success btn-sm text-white ml-1 mt-1 w-24'>
-                SAVE HOME
-              </button>
-            </div>
-            <div className='flex flex-col'>
-              <button
-                onClick={() => {
-                  setValue(obmd);
-                }}
-                className='btn btn-primary btn-sm text-white ml-1 w-24'
-              >
-                Our Beef
-              </button>
-              <button onClick={saveOurBeef} className='btn btn-success btn-sm text-white ml-1 mt-1 w-24'>
-                SAVE OUR BEEF
-              </button>
-            </div>
-          </div>
+        <div className='grid grid-rows-2 grid-cols-3 grid-flow-col mb-3 mt-2 w-3/4 md:w-1/2 lg:w-1/4 place-content-start items-start gap-y-1 gap-x-4'>
+          <h1 className='text-xl justify-self-start mr-5 mx-auto'>Load: </h1>
+          <h1 className='text-xl justify-self-start mr-5 mx-auto'>Save: </h1>
+          <button
+            onClick={() => {
+              setValue(hmd);
+            }}
+            className='btn btn-primary btn-sm text-white w-24'
+          >
+            Home
+          </button>
+          <button onClick={saveHome} className='btn btn-success btn-sm text-white w-24'>
+            SAVE HOME
+          </button>
+          <button
+            onClick={() => {
+              setValue(obmd);
+            }}
+            className='btn btn-primary btn-sm text-white w-24'
+          >
+            Our Beef
+          </button>
+          <button onClick={saveOurBeef} className='btn btn-success btn-sm text-white w-24'>
+            SAVE OUR BEEF
+          </button>
         </div>
         <div className='h-full'>
           <MdEditor
