@@ -1,9 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'node:fs/promises';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import bcrypt from 'bcrypt';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createClient } from 'redis';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
