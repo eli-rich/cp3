@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,12 +7,8 @@ import { createClient } from 'redis';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const client = createClient({
-  socket: {
-    host: 'localhost',
-    port: 6379,
-  },
-});
+const client = createClient({ url: process.env.REDIS_URL });
+
 client
   .connect()
   .then(() => console.log('Connected to Redis -- /update'))

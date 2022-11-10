@@ -46,12 +46,7 @@ export default function OurBeef({ md, error }: ServerProps) {
 }
 
 export async function getStaticProps() {
-  const client = createClient({
-    socket: {
-      host: 'localhost',
-      port: 6379,
-    },
-  });
+  const client = createClient({ url: process.env.REDIS_URL });
 
   let md = '';
   let error = '';

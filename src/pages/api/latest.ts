@@ -2,12 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from 'redis';
 
-const client = createClient({
-  socket: {
-    host: 'localhost',
-    port: 6379,
-  },
-});
+const client = createClient({ url: process.env.REDIS_URL });
+
 client
   .connect()
   .then(() => console.log('Connected to Redis -- /latest'))
