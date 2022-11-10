@@ -32,3 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
   res.status(200).json({ data: data[0] });
 }
+
+export const config = {
+  runtime: 'experimental-edge',
+};
