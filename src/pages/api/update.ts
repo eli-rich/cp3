@@ -1,28 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import bcrypt from 'bcryptjs';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'node:fs/promises';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import bcrypt from 'bcrypt';
-import { createClient } from 'redis';
+import { PrismaClient } from '@prisma/client';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-const client = createClient({
-  socket: {
-    host: 'redis',
-    port: 6379,
-  },
-});
-client
-  .connect()
-  .then(() => console.log('Connected to Redis -- /update'))
-  .catch(console.error);
-
-client
-  .sendCommand(['AUTH', process.env.REDIS_PASSWORD as string])
-  .then(() => console.log('Authenticated to Redis -- /update'))
-  .catch(console.error);
+const prisma = new PrismaClient();
 
 type Response = {
   success: boolean;
@@ -34,12 +15,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const { password, content, page } = req.body;
 
   try {
-    const hash = await client.GET('pass');
-    if (!hash) return res.status(500).json({ success: false, error: 'Database Error' });
-    const isVerified = await bcrypt.compare(password, hash);
+    const user = await prisma.user.findFirst();
+    if (!user) return res.status(500).json({ success: false, error: 'Database Error' });
+    const isVerified = await bcrypt.compare(password, user.password);
     if (!isVerified) return res.status(401).json({ success: false, error: 'Incorrect password' });
-    await client.LPUSH(page, content);
-    // await fs.writeFile(join(__dirname, `../../../public/md/${page}.md`), content);
+    if (page.toLowerCase() === 'ourbeef') {
+      await prisma.ourBeef.create({
+        data: {
+          md: Buffer.from(content),
+        },
+      });
+    } else if (page.toLowerCase() === 'home') {
+      await prisma.home.create({
+        data: {
+          md: Buffer.from(content),
+        },
+      });
+    }
   } catch (e) {
     console.log((e as Error).message);
     return res.status(500).json({ success: false, error: 'Internal server error' });

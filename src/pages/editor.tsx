@@ -35,7 +35,6 @@ export default function Editor() {
   }
   async function save(page: string) {
     toggleOpen();
-    // const newMD = document.querySelector('textarea')?.value;
   }
   function handleEditorChange({ html, text }: { html: string; text: string }) {
     setValue(text);
