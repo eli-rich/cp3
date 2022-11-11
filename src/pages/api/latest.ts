@@ -1,18 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { createClient } from 'redis';
+import { PrismaClient } from '@prisma/client';
 
-const client = createClient({ url: process.env.REDIS_URL });
-
-client
-  .connect()
-  .then(() => console.log('Connected to Redis -- /latest'))
-  .catch(console.error);
-
-client
-  .sendCommand(['AUTH', process.env.REDIS_PASSWORD as string])
-  .then(() => console.log('Authenticated to Redis -- /latest'))
-  .catch(console.error);
+const prisma = new PrismaClient();
 
 type Response = {
   data?: string;
@@ -25,10 +15,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   if (typeof page !== 'string') return res.status(400).json({ error: 'Bad request' });
   let data;
   try {
-    data = await client.LRANGE(page, 0, 0);
+    if (page.toLowerCase() === 'ourbeef') {
+      data = await prisma.ourBeef.findFirst({
+        orderBy: {
+          date: 'desc',
+        },
+      });
+    } else if (page.toLowerCase() === 'home') {
+      data = await prisma.home.findFirst({
+        orderBy: {
+          date: 'desc',
+        },
+      });
+    }
+    if (!data) return res.status(404).json({ error: 'Not found' });
   } catch (e) {
     console.log((e as Error).message);
     return res.status(500).json({ error: 'Internal server error' });
   }
-  res.status(200).json({ data: data[0] });
+  res.status(200).json({ data: data.md.toString() });
 }
