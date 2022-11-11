@@ -6,7 +6,7 @@ import Footer from '../components/layout/Footer';
 
 import { marked } from 'marked';
 import { useEffect } from 'react';
-import { createClient } from 'redis';
+import { PrismaClient } from '@prisma/client';
 
 interface ServerProps {
   json?: string;
@@ -46,17 +46,18 @@ export default function OurBeef({ md, error }: ServerProps) {
 }
 
 export async function getStaticProps() {
-  const client = createClient({ url: process.env.REDIS_URL });
+  const prisma = new PrismaClient();
 
   let md = '';
   let error = '';
   try {
-    await client.connect().then(() => console.log('Connected to Redis -- /'));
-    await client
-      .sendCommand(['AUTH', process.env.REDIS_PASSWORD as string])
-      .then(() => console.log('Authenticated to Redis -- /'));
-    const data = await client.LRANGE('ourbeef', 0, 0);
-    md = data[0];
+    const data = await prisma.ourBeef.findFirst({
+      orderBy: {
+        date: 'desc',
+      },
+    });
+    if (data) md = data.md.toString();
+    else md = `# Internal Server Error`;
   } catch (e) {
     error = (e as Error).message;
   }
