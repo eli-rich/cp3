@@ -15,7 +15,10 @@ interface ServerProps {
 }
 
 export default function OurBeef({ md, error }: ServerProps) {
-  if (error && typeof window !== 'undefined') alert(error);
+  if (error && typeof window !== 'undefined') {
+    alert(`Fatal error: ${error.toString()}`);
+    console.error(error);
+  }
   const html = marked(md);
 
   useEffect(() => {
