@@ -22,7 +22,7 @@ export default function Home({ md, error }: ServerProps) {
       <NavBar />
       <Hero />
       <ContentContainer>
-        <ContentWrapper serverHTML={html as string} />
+        <ContentWrapper serverHTML={html} />
       </ContentContainer>
       <Footer />
     </>

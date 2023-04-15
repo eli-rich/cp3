@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 import { PrismaClient } from '@prisma/client';
 
 interface ServerProps {
-  json?: string;
   error: string;
   md: string;
 }
@@ -41,7 +40,7 @@ export default function OurBeef({ md, error }: ServerProps) {
       <NavBar />
       <div className='mt-24'>
         <ContentContainer>
-          <ContentWrapper serverHTML={html as string} />
+          <ContentWrapper serverHTML={html} />
         </ContentContainer>
         <Footer />
       </div>
