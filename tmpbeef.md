@@ -20,36 +20,47 @@ Looking for a gift that's sure to impress even the most difficult recipient? Our
 
 # American Wagyu Beef — 2023
 
-- Farmer Carolyn $99
+- **Farmer Carolyn — $99**
+
   - 2 Filet Mignon
-  - 3 pkg Ground Beef
-- Farmer Nell $99
+  - 8 ~1/4 lb Burgers
+  - 1 pkg Ground Beef
+
+- **Farmer Nell — $99**
+
   - 2 Ribeye Steaks
-  - 3 pkg Ground Beef
-- Farmer Bettye $99
+  - 8 ~1/4 lb Burgers
+  - 1 pkg Ground Beef
+
+- **Farmer Bettye — $99**
+
   - 2 New York Strip Steaks
-  - 3 pkg Ground Beef
-- Farmer Nancy $99
+  - 8 ~1/4 lb Burgers
+  - 1 pkg Ground Beef
+
+- **Farmer Nancy — $99**
   - 2 Sirloin Steaks
-  - 4 pkg Ground Beef
+  - 8 ~1/4 lb Burgers
+  - 2 pkg Ground Beef
 
 ` `
 
 ## Local Favorites
 
-- Fence Bender $99
-
+- **Fence Bender — $99**
   - 1-2 lbs Short Ribs
-  - 4 pkg Ground Beef
+  - 8 ~1/4 lb Burgers
+  - 2 pkg Ground Beef
   - 2 pkg Round/Cube Steaks
-
-- Cow Trails $99
+- **Cow Trails — $99**
   - 2 (1 lbs) pkg Fajita Strips
-  - 4 pkg Ground Beef
+  - 8 ~1/4 lb Burgers
+  - 2 pkg Ground Beef
   - 2 pkg Round/Cube Steaks
-- Hay Bale $99
+- **Hay Bale — $99**
   - 1 (2-4 lbs) Roast
-  - 4 pkg Ground Beef
+  - 8 ~1/4 lb Burgers
+  - 2 pkg Ground Beef
   - 2 pkg Round/Cube Steaks
 
 ` `
