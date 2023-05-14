@@ -67,7 +67,7 @@ export default function EditorSubmit({ open, toggleOpen, page, content }: Submit
   }, [success]);
 
   const closeBTN = () => (
-    <button className='btn btn-secondary text-white' onClick={close}>
+    <button className='btn-secondary btn text-white' onClick={close}>
       Close
     </button>
   );
@@ -76,15 +76,15 @@ export default function EditorSubmit({ open, toggleOpen, page, content }: Submit
     <>
       <input
         placeholder='Password'
-        className='input input-bordered w-full max-w-xs'
+        className='input-bordered input w-full max-w-xs'
         type='password'
         autoComplete='none'
         ref={passwordInput}
       />
-      <button onClick={toggleOpen} className='btn btn-secondary text-white'>
+      <button onClick={toggleOpen} className='btn-secondary btn text-white'>
         Cancel
       </button>
-      <button onClick={save} className='btn btn-accent text-white'>
+      <button onClick={save} className='btn-accent btn text-white'>
         Save
       </button>
     </>
@@ -99,9 +99,9 @@ export default function EditorSubmit({ open, toggleOpen, page, content }: Submit
         <div className='modal-box'>
           <div>
             {(success === null && lockIMG()) || (success && successIMG()) || (success === false && errorIMG())}
-            <h3 className='font-bold text-xl'>{statusTitle}</h3>
+            <h3 className='text-xl font-bold'>{statusTitle}</h3>
           </div>
-          <div className='py-4 text-bold rounded-lg p-1 mt-2 text-lg'>
+          <div className='text-bold mt-2 rounded-lg p-1 py-4 text-lg'>
             <p>{statusMessage}</p>
             {success === null ? (
               <>

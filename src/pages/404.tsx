@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <NavBar />
-      <div className='mt-24 flex flex-col h-screen'>
+      <div className='mt-24 flex h-screen flex-col'>
         <div className='flex-shrink flex-grow basis-auto'>
           <ContentContainer>
             <NotFoundWrapper />

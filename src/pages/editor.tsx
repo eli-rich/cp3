@@ -45,29 +45,29 @@ export default function Editor() {
       <EditorSubmit open={open} toggleOpen={toggleOpen} page={page} content={value} />
       <NavBar />
       <div className='translate-y-20' id='editorContainer'>
-        <div className='grid grid-rows-2 grid-cols-3 grid-flow-col mb-3 mt-2 w-3/4 md:w-1/2 lg:w-1/4 place-content-start items-start gap-y-1 gap-x-4'>
-          <h1 className='text-xl justify-self-start mr-5 mx-auto'>Load: </h1>
-          <h1 className='text-xl justify-self-start mr-5 mx-auto'>Save: </h1>
+        <div className='mb-3 mt-2 grid w-3/4 grid-flow-col grid-cols-3 grid-rows-2 place-content-start items-start gap-x-4 gap-y-1 md:w-1/2 lg:w-1/4'>
+          <h1 className='mx-auto mr-5 justify-self-start text-xl'>Load: </h1>
+          <h1 className='mx-auto mr-5 justify-self-start text-xl'>Save: </h1>
           <button
             onClick={() => {
               setValue(hmd);
             }}
-            className='btn btn-primary btn-sm text-white w-24'
+            className='btn-primary btn-sm btn w-24 text-white'
           >
             Home
           </button>
-          <button onClick={saveHome} className='btn btn-success btn-sm text-white w-24'>
+          <button onClick={saveHome} className='btn-success btn-sm btn w-24 text-white'>
             SAVE HOME
           </button>
           <button
             onClick={() => {
               setValue(obmd);
             }}
-            className='btn btn-primary btn-sm text-white w-24'
+            className='btn-primary btn-sm btn w-24 text-white'
           >
             Our Beef
           </button>
-          <button onClick={saveOurBeef} className='btn btn-success btn-sm text-white w-24'>
+          <button onClick={saveOurBeef} className='btn-success btn-sm btn w-24 text-white'>
             SAVE OUR BEEF
           </button>
         </div>

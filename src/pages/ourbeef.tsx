@@ -27,6 +27,8 @@ export default function OurBeef({ md, error }: ServerProps) {
       elements.forEach((element) => {
         element.classList.add('ff-fix');
       });
+      // check if the beef breakdown image is present, if so, add the appropriate classes
+      // else, return
       if (elements[3]) elements[3].classList.add('bb-container');
       else return;
 
